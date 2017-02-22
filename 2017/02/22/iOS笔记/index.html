@@ -3,17 +3,34 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Purkylin&#39;s Blog</title>
+  <title>iOS笔记 | Purkylin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Purkylin's Blog">
-<meta property="og:url" content="http://purkylin.github.io/index.html">
+  <meta name="description" content="IOS证书目录~/Library/MobileDevice/Provisioning Profiles
+3D touch
+ios 本地通知 从后台点击进入前台，状态为inactive
+应用切换到后台会继续执行大约5秒
+使用estimatedHeightForRowAtIndexPath reloadCell会自动把tableview滚动到顶部
+静态启动静态的启动方式定义在info.plist中的字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS笔记">
+<meta property="og:url" content="http://purkylin.github.io/2017/02/22/iOS笔记/index.html">
 <meta property="og:site_name" content="Purkylin's Blog">
-<meta property="og:description">
+<meta property="og:description" content="IOS证书目录~/Library/MobileDevice/Provisioning Profiles
+3D touch
+ios 本地通知 从后台点击进入前台，状态为inactive
+应用切换到后台会继续执行大约5秒
+使用estimatedHeightForRowAtIndexPath reloadCell会自动把tableview滚动到顶部
+静态启动静态的启动方式定义在info.plist中的字">
+<meta property="og:image" content="http://odakbgmli.bkt.clouddn.com/blog/10%3A36%3A21.jpg">
+<meta property="og:updated_time" content="2017-02-22T04:10:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Purkylin's Blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="iOS笔记">
+<meta name="twitter:description" content="IOS证书目录~/Library/MobileDevice/Provisioning Profiles
+3D touch
+ios 本地通知 从后台点击进入前台，状态为inactive
+应用切换到后台会继续执行大约5秒
+使用estimatedHeightForRowAtIndexPath reloadCell会自动把tableview滚动到顶部
+静态启动静态的启动方式定义在info.plist中的字">
   
     <link rel="alternate" href="/atom.xml" title="Purkylin&#39;s Blog" type="application/atom+xml">
   
@@ -62,9 +79,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-iOS笔记" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-iOS笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/22/iOS笔记/" class="article-date">
   <time datetime="2017-02-22T04:09:51.000Z" itemprop="datePublished">2017-02-22</time>
@@ -77,8 +92,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/22/iOS笔记/">iOS笔记</a>
+    <h1 class="article-title" itemprop="name">
+      iOS笔记
     </h1>
   
 
@@ -410,278 +425,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-macos逆向笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/22/macos逆向笔记/" class="article-date">
-  <time datetime="2017-02-22T03:53:00.000Z" itemprop="datePublished">2017-02-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/22/macos逆向笔记/">macos逆向笔记</a>
-    </h1>
+    <a href="/2017/02/22/macos逆向笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">macos逆向笔记</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
-<li>重新签名<br><code>codesign --deep -f -s &quot;Mac Developer: purkylin@gmail.com (K2WB492RBL)&quot; &lt;App&gt;</code></li>
-<li>查看签名<br><code>codesign -d --verbose=3 &lt;App&gt;</code></li>
-<li>查看dylib偏移<br><code>image list -o</code></li>
-<li>中文字符串查找<br>在字符串资源文件里查找对应的英文条目，然后放到hopper里查找即可</li>
-<li><strong>ASLR</strong>: Address space layout random</li>
-<li><strong>SIP</strong>: system integrity protection<br>  在 OS X El Capitan 中有一个跟安全相关的模式叫 SIP（System Integrity Protection ），它禁止让软件以 root 身份来在 Mac 上运行，在升级到 OS X 10.11 中或许你就会看到部分应用程序被禁用了，这些或许是你通过终端或者第三方软件源安装。对于大多数用户来说，这种安全设置很方便，但是也有些开发者或者高级 Mac 用户不需要这样的设置。<pre><code>1. 重启 Mac，按住Command+R键直到Apple logo 出现，进入Recovery Mode
-2. 点击 Utilities &gt; Terminal, 在 Terminal中输入`csrutil disable`，之后回车
-</code></pre>  重启 Mac,这样SIP安全设置就已经被关闭了，如果想重新开启该安全设置，重复上面步骤，在第三步中将命令更换为 <code>csrutil enable</code>。<br>常用的命令如下：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo csrutil enable &#8211;without fs&#65306;Filesystem Protections disable&#10;sudo csrutil enable &#8211;without kext&#65306;Kext Signing disable&#10;sudo csrutil enable &#8211;without debug&#65306;Debugging Restrictions disable&#10;sudo csrutil enable &#8211;without nvram&#65306;NVRAM Protections disable&#10;sudo csrutil enable &#8211;without dtrace&#65306;DTrace Restrictions disable</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>其中 <strong>kext signing</strong> 表示苹果认证的ssid</p>
-<ul>
-<li><p>安全模式启动<br>请执行以下步骤以启动进入安全模式。启动或重新启动 Mac。听到启动声后，立即按住 Shift 键。<br>看到屏幕上出现 Apple 标志后松开Shift键<br>恢复模式启动<br>恢复模式的具体操作是：开机时按住键盘上的“Option”键，在开机选择菜单中选择<em>Recovery HD</em>即可</p>
-</li>
-<li><p>ptrace 反调试<br>下面的命令可以反调试， 如果调用一次很容易被hack掉<br><code>ptrace(PT_DENY_ATTACH, 0, 0, 0);</code><br>把上面命令中的<strong>PT_DENY_ATTACH</strong>替换成<strong>0x0a</strong>即可允许调试</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define PT_TRACE_ME 0 /* child declares it&#39;s being traced */&#10;#define PT_READ_I 1 /* read word in child&#39;s I space */&#10;#define PT_READ_D 2 /* read word in child&#39;s D space */&#10;#define PT_READ_U 3 /* read word in child&#39;s user structure */&#10;#define PT_WRITE_I 4 /* write word in child&#39;s I space */&#10;#define PT_WRITE_D 5 /* write word in child&#39;s D space */&#10;#define PT_WRITE_U 6 /* write word in child&#39;s user structure */&#10;#define PT_CONTINUE 7 /* continue the child */&#10;#define PT_KILL 8 /* kill the child process */&#10;#define PT_STEP 9 /* single step the child */&#10;#define PT_ATTACH 10 /* trace some running process */&#10;#define PT_DETACH 11 /* stop tracing a process */&#10;#define PT_SIGEXC 12 /* signals as exceptions for current_proc */&#10;#define PT_THUPDATE 13 /* signal for thread# */&#10;#define PT_ATTACHEXC 14 /* attach to running process with signal exception */&#10;&#10;#define PT_FORCEQUOTA 30 /* Enforce quota for root */&#10;#define PT_DENY_ATTACH 31</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>调用约定<strong>ABI</strong><br><a href="http://people.freebsd.org/~obrien/amd64-elf-abi.pdf" target="_blank" rel="external">参考</a></p>
-<ol>
-<li>传参<br>If the class is MEMORY, pass the argument on the stack.</li>
-<li>If the class is INTEGER, the next available register of the sequence %rdi,<br>%rsi, %rdx, %rcx, %r8 and %r9 is used12 .</li>
-<li>If the class is SSE, the next available SSE register is used, the registers are<br>taken in the order from %xmm0 to %xmm7.</li>
-<li>If the class is SSEUP, the eightbyte is passed in the upper half of the least<br>used SSE register.</li>
-<li><p>If the class is X87, X87UP or COMPLEX_X87, it is passed in memory.</p>
-<p>Note that %r11 is neither required to be preserved, nor is it used to pass arguments. Making this register available as scratch register means that code in the PLT need not spill any registers when computing the address to which control needs to be transferred. %rax is used to indicate the number of SSE arguments passed to a function requiring a variable number of arguments. %r10 is used for passing a function’s static chain pointer.</p>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="工具："><a href="#工具：" class="headerlink" title="工具："></a>工具：</h2><ul>
-<li>Hopper 反汇编工具</li>
-<li>MachxView 查看应用信息</li>
-<li>Interface Inspector 查看视图结构</li>
-<li>class-dump 输出类信息</li>
-</ul>
-<h2 id="实战篇"><a href="#实战篇" class="headerlink" title="实战篇"></a>实战篇</h2><h3 id="iPic-v1-2破解"><a href="#iPic-v1-2破解" class="headerlink" title="iPic v1.2破解"></a>iPic v1.2破解</h3><ol>
-<li>查找函数<strong>sub_10008e</strong>，把<code>000000010008ee66         je         0x10008ee97</code> 这一行改为 nop</li>
-<li>查找函数<strong> sub_1001036b0</strong>，直接返回1</li>
-<li>重新签名</li>
-</ol>
-<h3 id="Reveal2-破解"><a href="#Reveal2-破解" class="headerlink" title="Reveal2 破解"></a>Reveal2 破解</h3><ol>
-<li>绕过ptrace反调试</li>
-<li>绕过完整性检查， 让函数<strong>sub_1001ecbc0</strong>返回1即可</li>
-<li>绕过启动时弹窗，reveal2使用的是swfit重写的，证书管理使用的是devmate库，<br>一般启动代码如下：</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (!DMKIsApplicationActivated(NULL))&#10;&#123;&#10;    [DevMateKit runActivationDialog:nil inMode:DMActivationModeModal];&#10;    if (!DMKIsApplicationActivated(NULL))&#10;    &#123;&#10;        [NSApp terminate:nil];&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>我异想天开如果修改这个库，让这个函数<strong>DMKIsApplicationActivated</strong>返回1<br>即可，不知是否可行，我只是改了framework,未改签名，发现运行出错，不知是否可行，有待测试。</p>
-<p>找到这个函数<strong>sub_1000d5c80</strong>，反转第一个if即可绕过弹出</p>
-<ol>
-<li>enable菜单</li>
-<li>以invalidMenu为关键字查找，在适当的位置反转条件即可。只是有部分菜单不能enable,如file/new window， 不知为什么，有待解决</li>
-</ol>
-<h3 id="Reveal6-破解"><a href="#Reveal6-破解" class="headerlink" title="Reveal6 破解"></a>Reveal6 破解</h3><p>相对Reveal2， Reveal6破解难度增加不少，让人摸不到头脑</p>
-<ol>
-<li>首先禁用反调试， 老生常谈，找Entry Point,跳到这个地址000000010028d50c， 找到ptrace语句，把它第一个参数替换为0x0a</li>
-<li>隐藏弹窗，这一步花费了很长时间，最后实在没方法，既然是弹窗，一定会调用runModel函数，搜索runModel找到方法，来到这个地址000000010003a460，让这个函数直接返回1即可，然后继续执行会调用00000001002b00e4这个函数让它返回0.</li>
-<li>签名不解释</li>
-<li>签完名后运行会出现“This copy of Reveal is damaged”对话框。搜索“Damaged”，会发现”Application Damaged Alert“，跟进这个函数（0000000100161d30）直接返回即可。</li>
-<li>再次重新签名，👌</li>
-<li>菜单灰色以后再弄</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/macos逆向笔记/" data-id="cizgfzsgq00012b3ovk58tlc0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-CMDevice​Motion学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/22/CMDevice​Motion学习笔记/" class="article-date">
-  <time datetime="2017-02-22T03:52:35.000Z" itemprop="datePublished">2017-02-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/22/CMDevice​Motion学习笔记/">CMDevice​Motion学习笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>CMDevice​Motion学习</p>
-<ul>
-<li>坐标系 <img src="https://camo.githubusercontent.com/6d575bd695c76f9e6c77cec1c38951556ee66584/68747470733a2f2f7261772e6769746875622e636f6d2f6d6178696d62696c616e2f694f532d436f72654d6f74696f6e2d4578616d706c652f6d61737465722f696d616765732f312e706e67" alt=""></li>
-<li><a href="http://nshipster.com/cmdevicemotion/" target="_blank" rel="external">参考</a></li>
-<li><a href="https://segmentfault.com/a/1190000002400742" target="_blank" rel="external">中文参考</a></li>
-<li>欧拉角: 用来确定定点转动刚体位置的3个一组独立角参量; 由三个属性构成，分别是：<ol>
-<li>pitch 绕x轴旋转</li>
-<li>roll 绕y轴旋转</li>
-<li>yaw 绕z轴旋转<br>方向的符号遵循右手法则</li>
-</ol>
-</li>
-<li>模式<ol>
-<li>Accelerometer 加速度</li>
-<li>Gyroscope 陀螺仪</li>
-<li>Magnetometer 磁力仪</li>
-<li>Device motion 可以获取设备状态信息， 如x、y、z轴的旋转角度</li>
-</ol>
-</li>
-<li><p>获取数据模式</p>
-<ol>
-<li><p>pull</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">manager.startGyroUpdates()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>push</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">      <span class="keyword">let</span> queue = <span class="type">NSOperationQueue</span>.mainQueue</span><br><span class="line">manager.startGyroUpdatesToQueue(queue) &#123;</span><br><span class="line">    (data, error) <span class="keyword">in</span></span><br><span class="line">    <span class="comment">// …</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>使用需导入 CoreMotion 框架</p>
-</li>
-<li><p>demo</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> manager = <span class="type">CMMotionManager</span>()</span><br><span class="line">  manager.startDeviceMotionUpdates()</span><br><span class="line">  </span><br><span class="line">  <span class="type">Timer</span>.scheduledTimer(withTimeInterval: <span class="number">0.4</span>, repeats: <span class="literal">true</span>, block: &#123; (timer) <span class="keyword">in</span></span><br><span class="line">      <span class="keyword">if</span> <span class="keyword">let</span> attitude = <span class="keyword">self</span>.manager.deviceMotion?.attitude &#123;</span><br><span class="line">          <span class="keyword">let</span> pitch = attitude.pitch  <span class="comment">// x axis</span></span><br><span class="line">          <span class="keyword">let</span> roll = attitude.roll    <span class="comment">// y axis</span></span><br><span class="line">          <span class="keyword">let</span> yaw = attitude.yaw      <span class="comment">// z axis</span></span><br><span class="line">          </span><br><span class="line">          <span class="keyword">let</span> factor = <span class="number">75.0</span></span><br><span class="line"></span><br><span class="line">          <span class="keyword">let</span> x = <span class="type">CGFloat</span>(sin(roll) * factor)</span><br><span class="line">          <span class="keyword">let</span> y = <span class="type">CGFloat</span>(sin(pitch) * factor)</span><br><span class="line">          <span class="keyword">let</span> z = <span class="type">CGFloat</span>(sin(yaw) * factor)</span><br><span class="line"></span><br><span class="line">          <span class="built_in">print</span>(“\(x)       \(y)      \(z)”)</span><br><span class="line">          </span><br><span class="line">          <span class="keyword">let</span> transform = <span class="type">CGAffineTransform</span>(translationX: x, y: y)</span><br><span class="line">          </span><br><span class="line">          <span class="type">DispatchQueue</span>.main.async &#123;</span><br><span class="line">              <span class="type">UIView</span>.animate(withDuration: <span class="number">0.3</span>, animations: &#123; </span><br><span class="line">                  <span class="keyword">self</span>.ball.transform = transform</span><br><span class="line"></span><br><span class="line">              &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意</p>
-<ol>
-<li>三角函数的参数的单位是弧度, 不是角度</li>
-<li>不用的时候关闭对应模式的更新，不要调错函数</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/CMDevice​Motion学习笔记/" data-id="cizgfzsg500002b3otaseu6bq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-macOS编程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/22/macOS编程/" class="article-date">
-  <time datetime="2017-02-22T03:52:09.000Z" itemprop="datePublished">2017-02-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/22/macOS编程/">macOS编程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>titlebar透明， 保留关闭最大化等按钮<br>Ok, I found the solution. You have to create a subclass of ‘NSWindowControllerand in thewindowDidLoad` method, you have to put this code:</li>
-</ul>
-<p>self.window!.titlebarAppearsTransparent = true<br>to make the whole thing work, you have to activate “Full Size Content View” in Interface Builder.</p>
-<ul>
-<li><p>管理开机启动项<br>选择“登陆项”选项卡，我们就能看到当前的开机启动项了，勾选不需要的开机启动项，然后点击“－”按钮删除就行，如果要增加开机启动想，点击“＋”按钮，选择需要开自己启动的项目就行</p>
-</li>
-<li><p>Ruby源修改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gem sources --remove https://rubygems.org/</span><br><span class="line">gem sources <span class="operator">-a</span> http://ruby.taobao.org/</span><br><span class="line">gem sources <span class="operator">-l</span></span><br><span class="line">gem sources -u</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>强杀应用 <em>Command + ALT + ESC</em></p>
-</li>
-<li>launchpad残留图标怎么删除？<br>按住option键图标的左上角会出现删除的x号，点击x号就可以删除啦</li>
-<li>.ssh 免登陆<br>修改用户的%h/.ssh/authorized_keys, 如果没有手动新建，追加你的公钥即可</li>
-<li>在 macOS Sierra 中，开启 Finder，并使用 Shift + Command + .组合键，就能够让系统隐藏文件显示出来。再按一次，就能恢复原貌，十分简便。</li>
-<li><ul>
-<li>sublime 正则替换 使用$1, $2, …</li>
-</ul>
-</li>
-<li>Charlse,Map Local Tool, 截获请求转发</li>
-<li>md5<br><code>md5 &lt;your file&gt;   # mac</code><br><code>md5sum &lt;your file&gt;  # linux</code></li>
-<li><p>dns</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$networksetup</span> -listallnetworkservices <span class="comment"># 查看服务</span></span><br><span class="line"><span class="variable">$networksetup</span> -getdnsservers Wi-Fi <span class="comment"># 查看dns</span></span><br><span class="line"><span class="variable">$networksetup</span> -setdnsservers Wi-Fi <span class="number">114.114</span>.<span class="number">114.114</span> <span class="comment"># set dns</span></span><br><span class="line"><span class="variable">$networksetup</span> -setdnsservers Wi-Fi empty <span class="comment"># 清空dns</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Finder快捷键</p>
-<ul>
-<li>Command H        Hide Application </li>
-<li>Command option H      Hide other applications</li>
-<li>⌘ ⇧ A     Jump to /Applications</li>
-<li>⌘ ⇧ U     Jump to /Applications/Utilities/</li>
-<li>⌘ ⇧ D     Jump to ~/Desktop</li>
-<li>⌘ ⇧ H     Jump to Home Folder ~/</li>
-<li>⌘ + ↑      Move up one directory</li>
-<li>⌘ + [      go back</li>
-<li>⌘ + ]      go forward</li>
-<li>⌘ + R        Show original</li>
-<li>⌘ + L        Make Alias</li>
-<li>control + y cancel</li>
-</ul>
-</li>
-<li><p>install cask<br><code>brew tap caskroom/cask</code></p>
-</li>
-<li><p>锁屏<br>  Ctrl + Shift + Power 锁屏<br>  触发角</p>
-</li>
-<li><p>Mac Mail </p>
-<ul>
-<li>mail归档<br>归档邮件之后，在收件箱中看不到，但能搜索到</li>
-<li>mail智能邮箱<br>符合规则的邮件会在智能邮箱中看到，但不会移动，只是引用而已</li>
-</ul>
-</li>
-<li><p>DNSPOD 域名解析, 需要修改域名的dns，一般72小时生效，解析域名速度快</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/macOS编程/" data-id="cizgfzsgx00022b3o68lesenr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         

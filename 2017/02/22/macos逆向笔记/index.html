@@ -19,7 +19,7 @@
 查看签名codesign -d --verbose=3 &amp;lt;App&amp;gt;
 查看dylib偏移image list -o
 中文字符串查找在字符串资源文件里查找对应的英文条目，然后放到hopper里">
-<meta property="og:updated_time" content="2017-02-22T03:56:54.000Z">
+<meta property="og:updated_time" content="2017-02-22T04:08:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="macos逆向笔记">
 <meta name="twitter:description" content="基础
@@ -151,7 +151,9 @@
 <ol>
 <li>enable菜单</li>
 <li>以invalidMenu为关键字查找，在适当的位置反转条件即可。只是有部分菜单不能enable,如file/new window， 不知为什么，有待解决</li>
-<li><h3 id="Reveal6-破解"><a href="#Reveal6-破解" class="headerlink" title="Reveal6 破解"></a>Reveal6 破解</h3>相对Reveal2， Reveal6破解难度增加不少，让人摸不到头脑</li>
+</ol>
+<h3 id="Reveal6-破解"><a href="#Reveal6-破解" class="headerlink" title="Reveal6 破解"></a>Reveal6 破解</h3><p>相对Reveal2， Reveal6破解难度增加不少，让人摸不到头脑</p>
+<ol>
 <li>首先禁用反调试， 老生常谈，找Entry Point,跳到这个地址000000010028d50c， 找到ptrace语句，把它第一个参数替换为0x0a</li>
 <li>隐藏弹窗，这一步花费了很长时间，最后实在没方法，既然是弹窗，一定会调用runModel函数，搜索runModel找到方法，来到这个地址000000010003a460，让这个函数直接返回1即可，然后继续执行会调用00000001002b00e4这个函数让它返回0.</li>
 <li>签名不解释</li>
@@ -163,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/macos逆向笔记/" data-id="cizgffwi10001t63ohlpco625" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2017/02/22/macos逆向笔记/" data-id="cizgfzsgq00012b3ovk58tlc0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -171,6 +173,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/02/22/iOS笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          iOS笔记
+        
+      </div>
+    </a>
   
   
     <a href="/2017/02/22/CMDevice​Motion学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
@@ -210,6 +221,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/02/22/iOS笔记/">iOS笔记</a>
+          </li>
         
           <li>
             <a href="/2017/02/22/macos逆向笔记/">macos逆向笔记</a>
