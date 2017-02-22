@@ -3,21 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | Purkylin&#39;s Blog</title>
+  <title>Centos尝试 | Purkylin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="EPEL(Extra Package Enterprise Linux)
+yum -y install epel-release Install epel
+yum repolist Refresh repo
+
+systemctl 服务管理
+systemctl会输出激活的单元，等价于systemctl list-units
+systemctl --failed输出失败的单元
+所有可用的单元文件存放在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://purkylin.github.io/2016/02/28/hello-world/index.html">
+<meta property="og:title" content="Centos尝试">
+<meta property="og:url" content="http://purkylin.github.io/2016/09/13/centos/index.html">
 <meta property="og:site_name" content="Purkylin's Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-02-28T02:36:19.000Z">
+<meta property="og:description" content="EPEL(Extra Package Enterprise Linux)
+yum -y install epel-release Install epel
+yum repolist Refresh repo
+
+systemctl 服务管理
+systemctl会输出激活的单元，等价于systemctl list-units
+systemctl --failed输出失败的单元
+所有可用的单元文件存放在">
+<meta property="og:updated_time" content="2016-09-13T05:01:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="Centos尝试">
+<meta name="twitter:description" content="EPEL(Extra Package Enterprise Linux)
+yum -y install epel-release Install epel
+yum repolist Refresh repo
+
+systemctl 服务管理
+systemctl会输出激活的单元，等价于systemctl list-units
+systemctl --failed输出失败的单元
+所有可用的单元文件存放在">
   
     <link rel="alternate" href="/atom.xml" title="Purkylin&#39;s Blog" type="application/atom+xml">
   
@@ -66,10 +84,10 @@ Quick">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-centos" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/02/28/hello-world/" class="article-date">
-  <time datetime="2016-02-28T02:36:19.000Z" itemprop="datePublished">2016-02-28</time>
+    <a href="/2016/09/13/centos/" class="article-date">
+  <time datetime="2016-09-13T05:00:51.000Z" itemprop="datePublished">2016-09-13</time>
 </a>
     
   </div>
@@ -80,7 +98,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Centos尝试
     </h1>
   
 
@@ -88,20 +106,38 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="EPEL-Extra-Package-Enterprise-Linux"><a href="#EPEL-Extra-Package-Enterprise-Linux" class="headerlink" title="EPEL(Extra Package Enterprise Linux)"></a>EPEL(Extra Package Enterprise Linux)</h2><ul>
+<li><code>yum -y install epel-release</code> Install epel</li>
+<li><code>yum repolist</code> Refresh repo</li>
+</ul>
+<h2 id="systemctl-服务管理"><a href="#systemctl-服务管理" class="headerlink" title="systemctl 服务管理"></a>systemctl 服务管理</h2><ul>
+<li><code>systemctl</code>会输出激活的单元，等价于<code>systemctl list-units</code></li>
+<li><code>systemctl --failed</code>输出失败的单元</li>
+<li>所有可用的单元文件存放在 /usr/lib/systemd/system/ 和 /etc/systemd/system/ 目录（后者优先级更高）。查看所有已安装服务：</li>
+<li>start</li>
+<li>stop</li>
+<li>restart</li>
+<li>reload</li>
+<li>status</li>
+<li>is-enabled</li>
+<li>enable</li>
+<li>disable</li>
+<li>mask</li>
+<li>unmask</li>
+<li>list-units</li>
+</ul>
+<h3 id="journalctl-日志管理"><a href="#journalctl-日志管理" class="headerlink" title="journalctl 日志管理"></a>journalctl 日志管理</h3><h2 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h2><ul>
+<li>前面加$，内部加反斜杠 echo $’it\’s me’</li>
+<li>echo -e ‘it\x27s me’</li>
+<li>则是通过截断命令，在中间插入单引号来实现echo ‘it’\’s’ me’</li>
+</ul>
+<p>ifconfig eth0 | awk ‘{ print $2}’ | grep -E -o “([0-9]{1,3}[.]){3}[0-9]{1,3}”<br>alias top=’htop’<br>alias myip=$’ifconfig eth0 | awk \’{ print $2}\’ | grep -E -o “([0-9]{1,3}[.]){3}[0-9]{1,3}”‘</p>
+<p>centos默认使用firewalld而不是Iptalbes<br>Crontab<br>linux运维之道<br>Nginx反向代理谷歌<br>iptalbes -I INPUT -p icmp –icmp-type 8 -j DROP  加入这条规则后，外面ping不通自己，  只能ping通外面的</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2016/02/28/hello-world/" data-id="cizga4ng50009hm3olcc1at64" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2016/09/13/centos/" data-id="cizga4ngg000ehm3oflnssv22" class="article-share-link">Share</a>
       
       
     </footer>
@@ -110,15 +146,20 @@ Quick">
     
 <nav id="article-nav">
   
-    <a href="/2016/02/28/hexo/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/09/14/Deep-in-UIImage/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          部署hexo
+          Deep in UIImage
         
       </div>
     </a>
   
+  
+    <a href="/2016/09/13/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">it</div>
+    </a>
   
 </nav>
 

@@ -6,21 +6,18 @@
   <title>部署hexo | Purkylin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Install12345$ npm install hexo-cli -g$ hexo init blog$ cd blog$ npm install$ hexo server
-Use1234$ hexo new &quot;title&quot; # hexo n$ hexo deploy # hexo d$ hexo generate # hexo g$ hexo server # hexo s
-TroubleE">
+Use12345$ hexo new &quot;title&quot; # hexo n$ hexo deploy # hexo d$ hexo generate # hexo g$ hexo server # hexo s$ hexo c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="部署hexo">
-<meta property="og:url" content="http://yoursite.com/2016/02/28/部署hexo/index.html">
+<meta property="og:url" content="http://purkylin.github.io/2016/02/28/hexo/index.html">
 <meta property="og:site_name" content="Purkylin's Blog">
 <meta property="og:description" content="Install12345$ npm install hexo-cli -g$ hexo init blog$ cd blog$ npm install$ hexo server
-Use1234$ hexo new &quot;title&quot; # hexo n$ hexo deploy # hexo d$ hexo generate # hexo g$ hexo server # hexo s
-TroubleE">
-<meta property="og:updated_time" content="2016-02-28T04:02:38.000Z">
+Use12345$ hexo new &quot;title&quot; # hexo n$ hexo deploy # hexo d$ hexo generate # hexo g$ hexo server # hexo s$ hexo c">
+<meta property="og:updated_time" content="2016-09-21T05:45:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署hexo">
 <meta name="twitter:description" content="Install12345$ npm install hexo-cli -g$ hexo init blog$ cd blog$ npm install$ hexo server
-Use1234$ hexo new &quot;title&quot; # hexo n$ hexo deploy # hexo d$ hexo generate # hexo g$ hexo server # hexo s
-TroubleE">
+Use12345$ hexo new &quot;title&quot; # hexo n$ hexo deploy # hexo d$ hexo generate # hexo g$ hexo server # hexo s$ hexo c">
   
     <link rel="alternate" href="/atom.xml" title="Purkylin&#39;s Blog" type="application/atom+xml">
   
@@ -63,15 +60,15 @@ TroubleE">
         <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://purkylin.github.io"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-部署hexo" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/02/28/部署hexo/" class="article-date">
+    <a href="/2016/02/28/hexo/" class="article-date">
   <time datetime="2016-02-28T03:24:53.000Z" itemprop="datePublished">2016-02-28</time>
 </a>
     
@@ -92,31 +89,10 @@ TroubleE">
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<h2 id="Use"><a href="#Use" class="headerlink" title="Use"></a>Use</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"title"</span> <span class="comment"># hexo n</span></span><br><span class="line">$ hexo deploy <span class="comment"># hexo d</span></span><br><span class="line">$ hexo generate <span class="comment"># hexo g</span></span><br><span class="line">$ hexo server <span class="comment"># hexo s</span></span><br></pre></td></tr></table></figure>
+<h2 id="Use"><a href="#Use" class="headerlink" title="Use"></a>Use</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"title"</span> <span class="comment"># hexo n</span></span><br><span class="line">$ hexo deploy <span class="comment"># hexo d</span></span><br><span class="line">$ hexo generate <span class="comment"># hexo g</span></span><br><span class="line">$ hexo server <span class="comment"># hexo s</span></span><br><span class="line">$ hexo clean <span class="comment"># clean data,cache and public folder</span></span><br></pre></td></tr></table></figure>
 <h2 id="Trouble"><a href="#Trouble" class="headerlink" title="Trouble"></a>Trouble</h2><p>Error: Deployer not found: git<br>In version 3, your should use git instead of github.<br>And your need to run</p>
 <p><code>npm install hexo-deployer-git --save</code></p>
-<h2 id="Test-table"><a href="#Test-table" class="headerlink" title="Test table"></a>Test table</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">ID</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:right">PRICE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:center">luci</td>
-<td style="text-align:right">212$</td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td style="text-align:center">tom</td>
-<td style="text-align:right">23$</td>
-</tr>
-</tbody>
-</table>
-<table>
+<h2 id="Markdown-Test"><a href="#Markdown-Test" class="headerlink" title="Markdown Test"></a>Markdown Test</h2><h3 id="Test-table"><a href="#Test-table" class="headerlink" title="Test table"></a>Test table</h3><table>
 <thead>
 <tr>
 <th style="text-align:left">Left-aligned</th>
@@ -137,13 +113,17 @@ TroubleE">
 </tr>
 </tbody>
 </table>
+<h3 id="Test-checkmark"><a href="#Test-checkmark" class="headerlink" title="Test checkmark"></a>Test checkmark</h3><ul>
+<li>[x] Shopping</li>
+<li>[x] Study</li>
+<li>[x] Sleeping</li>
+<li>[ ] Playing</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/28/部署hexo/" data-id="cil61wd6z0001qdqyyel481p4" class="article-share-link">Share</a>
-      
-        <a href="http://yoursite.com/2016/02/28/部署hexo/#disqus_thread" class="article-comment-link">留言</a>
+      <a data-url="http://purkylin.github.io/2016/02/28/hexo/" data-id="cizga4ng30008hm3odgmka0er" class="article-share-link">Share</a>
       
       
     </footer>
@@ -152,10 +132,19 @@ TroubleE">
     
 <nav id="article-nav">
   
+    <a href="/2016/02/28/docker/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Docker常用命令
+        
+      </div>
+    </a>
   
-    <a href="/2016/02/28/My-New-Post/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2016/02/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">My New Post</div>
+      <div class="article-nav-title">Hello World</div>
     </a>
   
 </nav>
@@ -163,12 +152,6 @@ TroubleE">
   
 </article>
 
-
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
 </section>
         
           <aside id="sidebar">
@@ -185,7 +168,7 @@ TroubleE">
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li></ul>
     </div>
   </div>
 
@@ -198,15 +181,23 @@ TroubleE">
       <ul>
         
           <li>
-            <a href="/2016/02/28/部署hexo/">部署hexo</a>
+            <a href="/2016/09/14/Deep-in-UIImage/">Deep in UIImage</a>
           </li>
         
           <li>
-            <a href="/2016/02/28/My-New-Post/">My New Post</a>
+            <a href="/2016/09/13/centos/">Centos尝试</a>
           </li>
         
           <li>
-            <a href="/2016/02/28/hello-world/">Hello World</a>
+            <a href="/2016/09/13/git/">it</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/13/lldb/">LLDB命令</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/13/python/">Python</a>
           </li>
         
       </ul>
@@ -221,7 +212,7 @@ TroubleE">
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 Purkylin<br>
+      &copy; 2017 Purkylin<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
@@ -235,20 +226,6 @@ TroubleE">
   
 </nav>
     
-<script>
-  var disqus_shortname = 'purkylin';
-  
-  var disqus_url = 'http://yoursite.com/2016/02/28/部署hexo/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
