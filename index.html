@@ -86,7 +86,69 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
+<li>重新签名<br><code>codesign --deep -f -s &quot;Mac Developer: purkylin@gmail.com (K2WB492RBL)&quot; &lt;App&gt;</code></li>
+<li>查看签名<br><code>codesign -d --verbose=3 &lt;App&gt;</code></li>
+<li>查看dylib偏移<br><code>image list -o</code></li>
+<li>中文字符串查找<br>在字符串资源文件里查找对应的英文条目，然后放到hopper里查找即可</li>
+<li><strong>ASLR</strong>: Address space layout random</li>
+<li><strong>SIP</strong>: system integrity protection<br>  在 OS X El Capitan 中有一个跟安全相关的模式叫 SIP（System Integrity Protection ），它禁止让软件以 root 身份来在 Mac 上运行，在升级到 OS X 10.11 中或许你就会看到部分应用程序被禁用了，这些或许是你通过终端或者第三方软件源安装。对于大多数用户来说，这种安全设置很方便，但是也有些开发者或者高级 Mac 用户不需要这样的设置。<pre><code>1. 重启 Mac，按住Command+R键直到Apple logo 出现，进入Recovery Mode
+2. 点击 Utilities &gt; Terminal, 在 Terminal中输入`csrutil disable`，之后回车
+</code></pre>  重启 Mac,这样SIP安全设置就已经被关闭了，如果想重新开启该安全设置，重复上面步骤，在第三步中将命令更换为 <code>csrutil enable</code>。<br>常用的命令如下：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo csrutil enable &#8211;without fs&#65306;Filesystem Protections disable&#10;sudo csrutil enable &#8211;without kext&#65306;Kext Signing disable&#10;sudo csrutil enable &#8211;without debug&#65306;Debugging Restrictions disable&#10;sudo csrutil enable &#8211;without nvram&#65306;NVRAM Protections disable&#10;sudo csrutil enable &#8211;without dtrace&#65306;DTrace Restrictions disable</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>其中 <strong>kext signing</strong> 表示苹果认证的ssid</p>
+<ul>
+<li><p>安全模式启动<br>请执行以下步骤以启动进入安全模式。启动或重新启动 Mac。听到启动声后，立即按住 Shift 键。<br>看到屏幕上出现 Apple 标志后松开Shift键<br>恢复模式启动<br>恢复模式的具体操作是：开机时按住键盘上的“Option”键，在开机选择菜单中选择<em>Recovery HD</em>即可</p>
+</li>
+<li><p>ptrace 反调试<br>下面的命令可以反调试， 如果调用一次很容易被hack掉<br><code>ptrace(PT_DENY_ATTACH, 0, 0, 0);</code><br>把上面命令中的<strong>PT_DENY_ATTACH</strong>替换成<strong>0x0a</strong>即可允许调试</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define PT_TRACE_ME 0 /* child declares it&#39;s being traced */&#10;#define PT_READ_I 1 /* read word in child&#39;s I space */&#10;#define PT_READ_D 2 /* read word in child&#39;s D space */&#10;#define PT_READ_U 3 /* read word in child&#39;s user structure */&#10;#define PT_WRITE_I 4 /* write word in child&#39;s I space */&#10;#define PT_WRITE_D 5 /* write word in child&#39;s D space */&#10;#define PT_WRITE_U 6 /* write word in child&#39;s user structure */&#10;#define PT_CONTINUE 7 /* continue the child */&#10;#define PT_KILL 8 /* kill the child process */&#10;#define PT_STEP 9 /* single step the child */&#10;#define PT_ATTACH 10 /* trace some running process */&#10;#define PT_DETACH 11 /* stop tracing a process */&#10;#define PT_SIGEXC 12 /* signals as exceptions for current_proc */&#10;#define PT_THUPDATE 13 /* signal for thread# */&#10;#define PT_ATTACHEXC 14 /* attach to running process with signal exception */&#10;&#10;#define PT_FORCEQUOTA 30 /* Enforce quota for root */&#10;#define PT_DENY_ATTACH 31</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>调用约定<strong>ABI</strong><br><a href="http://people.freebsd.org/~obrien/amd64-elf-abi.pdf" target="_blank" rel="external">参考</a></p>
+<ol>
+<li>传参<br>If the class is MEMORY, pass the argument on the stack.</li>
+<li>If the class is INTEGER, the next available register of the sequence %rdi,<br>%rsi, %rdx, %rcx, %r8 and %r9 is used12 .</li>
+<li>If the class is SSE, the next available SSE register is used, the registers are<br>taken in the order from %xmm0 to %xmm7.</li>
+<li>If the class is SSEUP, the eightbyte is passed in the upper half of the least<br>used SSE register.</li>
+<li><p>If the class is X87, X87UP or COMPLEX_X87, it is passed in memory.</p>
+<p>Note that %r11 is neither required to be preserved, nor is it used to pass arguments. Making this register available as scratch register means that code in the PLT need not spill any registers when computing the address to which control needs to be transferred. %rax is used to indicate the number of SSE arguments passed to a function requiring a variable number of arguments. %r10 is used for passing a function’s static chain pointer.</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="工具："><a href="#工具：" class="headerlink" title="工具："></a>工具：</h2><ul>
+<li>Hopper 反汇编工具</li>
+<li>MachxView 查看应用信息</li>
+<li>Interface Inspector 查看视图结构</li>
+<li>class-dump 输出类信息</li>
+</ul>
+<h2 id="实战篇"><a href="#实战篇" class="headerlink" title="实战篇"></a>实战篇</h2><h3 id="iPic-v1-2破解"><a href="#iPic-v1-2破解" class="headerlink" title="iPic v1.2破解"></a>iPic v1.2破解</h3><ol>
+<li>查找函数<strong>sub_10008e</strong>，把<code>000000010008ee66         je         0x10008ee97</code> 这一行改为 nop</li>
+<li>查找函数<strong> sub_1001036b0</strong>，直接返回1</li>
+<li>重新签名</li>
+</ol>
+<h3 id="Reveal2-破解"><a href="#Reveal2-破解" class="headerlink" title="Reveal2 破解"></a>Reveal2 破解</h3><ol>
+<li>绕过ptrace反调试</li>
+<li>绕过完整性检查， 让函数<strong>sub_1001ecbc0</strong>返回1即可</li>
+<li>绕过启动时弹窗，reveal2使用的是swfit重写的，证书管理使用的是devmate库，<br>一般启动代码如下：</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (!DMKIsApplicationActivated(NULL))&#10;&#123;&#10;    [DevMateKit runActivationDialog:nil inMode:DMActivationModeModal];&#10;    if (!DMKIsApplicationActivated(NULL))&#10;    &#123;&#10;        [NSApp terminate:nil];&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>我异想天开如果修改这个库，让这个函数<strong>DMKIsApplicationActivated</strong>返回1<br>即可，不知是否可行，我只是改了framework,未改签名，发现运行出错，不知是否可行，有待测试。</p>
+<p>找到这个函数<strong>sub_1000d5c80</strong>，反转第一个if即可绕过弹出</p>
+<ol>
+<li>enable菜单</li>
+<li>以invalidMenu为关键字查找，在适当的位置反转条件即可。只是有部分菜单不能enable,如file/new window， 不知为什么，有待解决</li>
+<li><h3 id="Reveal6-破解"><a href="#Reveal6-破解" class="headerlink" title="Reveal6 破解"></a>Reveal6 破解</h3>相对Reveal2， Reveal6破解难度增加不少，让人摸不到头脑</li>
+<li>首先禁用反调试， 老生常谈，找Entry Point,跳到这个地址000000010028d50c， 找到ptrace语句，把它第一个参数替换为0x0a</li>
+<li>隐藏弹窗，这一步花费了很长时间，最后实在没方法，既然是弹窗，一定会调用runModel函数，搜索runModel找到方法，来到这个地址000000010003a460，让这个函数直接返回1即可，然后继续执行会调用00000001002b00e4这个函数让它返回0.</li>
+<li>签名不解释</li>
+<li>签完名后运行会出现“This copy of Reveal is damaged”对话框。搜索“Damaged”，会发现”Application Damaged Alert“，跟进这个函数（0000000100161d30）直接返回即可。</li>
+<li>再次重新签名，👌</li>
+<li>菜单灰色以后再弄</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
