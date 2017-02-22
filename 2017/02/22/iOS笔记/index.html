@@ -22,7 +22,7 @@ ios 本地通知 从后台点击进入前台，状态为inactive
 使用estimatedHeightForRowAtIndexPath reloadCell会自动把tableview滚动到顶部
 静态启动静态的启动方式定义在info.plist中的字">
 <meta property="og:image" content="http://odakbgmli.bkt.clouddn.com/blog/10%3A36%3A21.jpg">
-<meta property="og:updated_time" content="2017-02-22T04:14:53.000Z">
+<meta property="og:updated_time" content="2017-02-22T04:38:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS笔记">
 <meta name="twitter:description" content="IOS证书目录~/Library/MobileDevice/Provisioning Profiles
@@ -414,12 +414,42 @@ ios 本地通知 从后台点击进入前台，状态为inactive
 <li>H : 1273 </li>
 </ul>
 </li>
+<li>snapshotViewAfterScreenUpdates 在模拟器显示不正常，显示一片白    </li>
+<li><p>[NSConcreteValue length] unrecognized method<br>原因可能是野指针，例如一个成员变量是NSString类型，但是用assign修饰</p>
+</li>
+<li><p>视频切换时可能闪烁一下， 给cvplayer的contents属性设置一个值，上一个视频的最后一帧</p>
+</li>
+<li><p>在iphone7+等设备上显示视频可能边界会显示灰线，这是系统问题</p>
+<ul>
+<li>方案1<br>如果设置shouldRasterize属性会模糊</li>
+<li>方案2<br>调整cvplayer的位置和大小，位置可能和4的倍数有关</li>
+</ul>
+</li>
+<li><p>iOS 播放视频</p>
+<ul>
+<li>相关类<ul>
+<li>AVPlayer</li>
+<li>AVPlayerLayer：  AVPlayer的容器</li>
+<li>AVPlayerViewController </li>
+</ul>
+</li>
+<li><p>更换视频</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">AVPlayerItem</span> *item = [[<span class="built_in">AVPlayerItem</span> alloc] initWithURL:[<span class="built_in">NSURL</span> fileURLWithPath:path]];</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.player</span> replaceCurrentItemWithPlayerItem:item];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>播放视频</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">AVPlayer</span> *player = [[<span class="built_in">AVPlayer</span> alloc] initWithURL:[<span class="built_in">NSURL</span> fileURLWithPath:path]];</span><br><span class="line">[player play];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>loop<br>监听<em>AVPlayerItemDidPlayToEndTimeNotification</em>通知</p>
+</li>
+<li>后台播放，前后台切换</li>
+</ul>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/iOS笔记/" data-id="cizggqcy10004db3oahfqmjvo" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2017/02/22/iOS笔记/" data-id="cizggzwh20004g93oo3wce0z7" class="article-share-link">Share</a>
       
       
     </footer>

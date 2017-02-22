@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/vi笔记/" data-id="cizggqcxv0001db3olrdagrot" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2017/02/22/vi笔记/" data-id="cizggzwgw0001g93o5op1jwvl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -172,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/JSPatch笔记/" data-id="cizggqcy40005db3okvndcebu" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2017/02/22/JSPatch笔记/" data-id="cizggzwh40005g93ojkzb5g6q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -517,12 +517,42 @@
 <li>H : 1273 </li>
 </ul>
 </li>
+<li>snapshotViewAfterScreenUpdates 在模拟器显示不正常，显示一片白    </li>
+<li><p>[NSConcreteValue length] unrecognized method<br>原因可能是野指针，例如一个成员变量是NSString类型，但是用assign修饰</p>
+</li>
+<li><p>视频切换时可能闪烁一下， 给cvplayer的contents属性设置一个值，上一个视频的最后一帧</p>
+</li>
+<li><p>在iphone7+等设备上显示视频可能边界会显示灰线，这是系统问题</p>
+<ul>
+<li>方案1<br>如果设置shouldRasterize属性会模糊</li>
+<li>方案2<br>调整cvplayer的位置和大小，位置可能和4的倍数有关</li>
+</ul>
+</li>
+<li><p>iOS 播放视频</p>
+<ul>
+<li>相关类<ul>
+<li>AVPlayer</li>
+<li>AVPlayerLayer：  AVPlayer的容器</li>
+<li>AVPlayerViewController </li>
+</ul>
+</li>
+<li><p>更换视频</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">AVPlayerItem</span> *item = [[<span class="built_in">AVPlayerItem</span> alloc] initWithURL:[<span class="built_in">NSURL</span> fileURLWithPath:path]];</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.player</span> replaceCurrentItemWithPlayerItem:item];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>播放视频</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">AVPlayer</span> *player = [[<span class="built_in">AVPlayer</span> alloc] initWithURL:[<span class="built_in">NSURL</span> fileURLWithPath:path]];</span><br><span class="line">[player play];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>loop<br>监听<em>AVPlayerItemDidPlayToEndTimeNotification</em>通知</p>
+</li>
+<li>后台播放，前后台切换</li>
+</ul>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/iOS笔记/" data-id="cizggqcy10004db3oahfqmjvo" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2017/02/22/iOS笔记/" data-id="cizggzwh20004g93oo3wce0z7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -622,7 +652,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/macos逆向笔记/" data-id="cizggqcxy0002db3ozmll7x63" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2017/02/22/macos逆向笔记/" data-id="cizggzwgy0002g93oi7275sn3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -701,7 +731,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/CMDevice​Motion学习笔记/" data-id="cizggqcxg0000db3o505c35kk" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2017/02/22/CMDevice​Motion学习笔记/" data-id="cizggzwgi0000g93ojanydity" class="article-share-link">Share</a>
       
       
     </footer>
@@ -790,7 +820,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/macOS编程/" data-id="cizggqcxz0003db3ohq7q97zk" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2017/02/22/macOS编程/" data-id="cizggzwgz0003g93os1345plc" class="article-share-link">Share</a>
       
       
     </footer>
