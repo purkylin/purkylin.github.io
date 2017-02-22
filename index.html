@@ -64,6 +64,124 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-vi笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/22/vi笔记/" class="article-date">
+  <time datetime="2017-02-22T04:31:04.000Z" itemprop="datePublished">2017-02-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/22/vi笔记/">vi笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>change window width or height</p>
+<p>  Ctrl-W -<br>  Ctrl-W +</p>
+<p>  Ctrl-W &lt;<br>  Ctrl-W &gt;<br>  Ctrl-W |</p>
+<p>  :vertical res[ize]<br>  :res[ize]</p>
+<p>  :res +[n]<br>  :res -[n]</p>
+</li>
+<li><p>diff</p>
+<p>  diffupdate<br>  [c<br>  ]c<br>  diffput<br>  diffget<br>  do<br>  dp</p>
+</li>
+<li><p>buffer<br>  buffers<br>  new</p>
+</li>
+<li><p>completion<br>  Ctrl-X Ctrl-O<br>  Ctrl-X Ctrl-F<br>  Ctrl-X Ctrl-L<br>  Ctrl-n<br>  CTrl-p</p>
+</li>
+<li><p>others<br>  <c-h> 删除前一个字符(同退格键) <c-w> 删除前一个单词<br>  <c-u> 删至行首</c-u></c-w></c-h></p>
+<p>  Ctro-g 选择模式<br>  Ctrl-o 插入普通模式<br>  zz<br>  Surround.vim<br>  gt<br>  gT<br>  :edit %:h<tab><br>  :set path+=app/**<br>  :normal @a</tab></p>
+</li>
+<li><p>move cursor<br>  M: middle, H: high, L: low</p>
+</li>
+<li><p>fold<br> <em>zi zr zm</em><br> <em>set foldlevel</em><br> <em>set fdm  [syntax manual indent]</em></p>
+<pre><code>* manual          手工定义折叠
+* indent          更多的缩进表示更高级别的折叠
+* expr            用表达式来定义折叠
+* syntax          用语法高亮来定义折叠
+* diff            对没有更改的文本进行折叠
+* marker          对文中的标志折叠
+</code></pre></li>
+<li><p>xxd   # ascii -&gt; hex<br>xxd -r # hex -&gt; ascii</p>
+</li>
+<li><p>pratical vim 2nd, Account<br><a href="https://my.freenom.com/clientarea.php?action=domaindetails&amp;id=129203446" target="_blank" rel="external">Pratical vim 2nd, orighost@sina.com, 123456</a></p>
+</li>
+<li><p>emmet, shortkey: Ctrl + y + ,</p>
+</li>
+<li><a href="https://github.com/tpope/vim-surround" target="_blank" rel="external">surround.vim</a></li>
+<li><a href="https://github.com/SirVer/ultisnips" target="_blank" rel="external">ultisnips</a> TODO</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://purkylin.github.io/2017/02/22/vi笔记/" data-id="cizggqcxv0001db3olrdagrot" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JSPatch笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/22/JSPatch笔记/" class="article-date">
+  <time datetime="2017-02-22T04:29:32.000Z" itemprop="datePublished">2017-02-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/22/JSPatch笔记/">JSPatch笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://github.com/bang590/JSPatch/wiki/JSPatch-基础用法" target="_blank" rel="external">Document</a><br><a href="https://github.com/bang590/JSPatch/wiki/JSPatch-实现原理详解" target="_blank" rel="external">原理</a><br><a href="http://bang590.github.io/JSPatchConvertor/" target="_blank" rel="external">在线转换工具</a></p>
+<ol>
+<li>API<br><code>defineClass(classDeclaration, [properties,] instanceMethods, classMethods)</code><br>@param classDeclaration: 字符串，类名/父类名和Protocol<br>@param properties: 新增property，字符串数组，可省略<br>@param instanceMethods: 要添加或覆盖的实例方法<br>@param classMethods: 要添加或覆盖的类方法</li>
+<li><p>数组使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> cnt = vs.length;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;cnt; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> v = vs[i];</span><br><span class="line">    <span class="keyword">if</span> (v.isMemberOfClass(UIView.class())) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(v);</span><br><span class="line">        v.removeFromSuperview();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引用成员变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'UIView, UIColor'</span>);</span><br><span class="line"><span class="keyword">let</span> wht = UIColor.whiteColor();</span><br><span class="line">self.view().setBackgroundColor(wht);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://purkylin.github.io/2017/02/22/JSPatch笔记/" data-id="cizggqcy40005db3okvndcebu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-iOS笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/22/iOS笔记/" class="article-date">
@@ -385,7 +503,7 @@
 </li>
 <li><p>xcode8.1编译项目可能会签名失败， <strong>Signing Identity: “-“  </strong>, <a href="https://forums.developer.apple.com/thread/66538" target="_blank" rel="external">详见</a></p>
 </li>
-<li><p>编译警告 <a href="https://forums.developer.apple.com/thread/17921" target="_blank" rel="external"></a></p>
+<li><p><a href="https://forums.developer.apple.com/thread/17921" target="_blank" rel="external">编译警告</a></p>
 </li>
 <li><p>setting scheme， 在ios10中不在生效，只能打开设置：UIApplicationOpenSettingsURLString</p>
 </li>
@@ -404,7 +522,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/iOS笔记/" data-id="cizgfzsgz00032b3oa0e1zg13" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2017/02/22/iOS笔记/" data-id="cizggqcy10004db3oahfqmjvo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -504,7 +622,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/macos逆向笔记/" data-id="cizgfzsgq00012b3ovk58tlc0" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2017/02/22/macos逆向笔记/" data-id="cizggqcxy0002db3ozmll7x63" class="article-share-link">Share</a>
       
       
     </footer>
@@ -583,7 +701,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/CMDevice​Motion学习笔记/" data-id="cizgfzsg500002b3otaseu6bq" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2017/02/22/CMDevice​Motion学习笔记/" data-id="cizggqcxg0000db3o505c35kk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -672,7 +790,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://purkylin.github.io/2017/02/22/macOS编程/" data-id="cizgfzsgx00022b3o68lesenr" class="article-share-link">Share</a>
+      <a data-url="http://purkylin.github.io/2017/02/22/macOS编程/" data-id="cizggqcxz0003db3ohq7q97zk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -712,6 +830,14 @@
       <ul>
         
           <li>
+            <a href="/2017/02/22/vi笔记/">vi笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/22/JSPatch笔记/">JSPatch笔记</a>
+          </li>
+        
+          <li>
             <a href="/2017/02/22/iOS笔记/">iOS笔记</a>
           </li>
         
@@ -721,10 +847,6 @@
         
           <li>
             <a href="/2017/02/22/CMDevice​Motion学习笔记/">CMDevice​Motion学习笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/22/macOS编程/">macOS编程</a>
           </li>
         
       </ul>
