@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS笔记 | Purkylin&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IOS证书目录~/Library/MobileDevice/Provisioning Profiles
+3D touch
+ios 本地通知 从后台点击进入前台，状态为inactive
+应用切换到后台会继续执行大约5秒
+使用estimatedHeightForRowAtIndexPath reloadCell会自动把tableview滚动到顶部
+静态启动静态的启动方式定义在info.plist中的字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS笔记">
+<meta property="og:url" content="http://purkylin.github.io/2017/02/22/iOS笔记/index.html">
+<meta property="og:site_name" content="Purkylin's Blog">
+<meta property="og:description" content="IOS证书目录~/Library/MobileDevice/Provisioning Profiles
+3D touch
+ios 本地通知 从后台点击进入前台，状态为inactive
+应用切换到后台会继续执行大约5秒
+使用estimatedHeightForRowAtIndexPath reloadCell会自动把tableview滚动到顶部
+静态启动静态的启动方式定义在info.plist中的字">
+<meta property="og:image" content="http://odakbgmli.bkt.clouddn.com/blog/10%3A36%3A21.jpg">
+<meta property="og:updated_time" content="2017-02-22T04:38:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS笔记">
+<meta name="twitter:description" content="IOS证书目录~/Library/MobileDevice/Provisioning Profiles
+3D touch
+ios 本地通知 从后台点击进入前台，状态为inactive
+应用切换到后台会继续执行大约5秒
+使用estimatedHeightForRowAtIndexPath reloadCell会自动把tableview滚动到顶部
+静态启动静态的启动方式定义在info.plist中的字">
+  
+    <link rel="alternate" href="/atom.xml" title="Purkylin&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Purkylin&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://purkylin.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-iOS笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/22/iOS笔记/" class="article-date">
+  <time datetime="2017-02-22T04:09:51.000Z" itemprop="datePublished">2017-02-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="IOS证书目录"><a href="#IOS证书目录" class="headerlink" title="IOS证书目录"></a>IOS证书目录</h2><p><code>~/Library/MobileDevice/Provisioning Profiles</code></p>
+<h2 id="3D-touch"><a href="#3D-touch" class="headerlink" title="3D touch"></a>3D touch</h2><ul>
+<li>ios 本地通知 从后台点击进入前台，状态为inactive</li>
+<li>应用切换到后台会继续执行大约5秒</li>
+<li>使用estimatedHeightForRowAtIndexPath reloadCell会自动把tableview滚动到顶部</li>
+<li>静态启动<br>静态的启动方式定义在info.plist中的字典的数组UIApplicationShortcutItems 中，需要手动添加，你需要在每个字典中对一下的键（key）提供有效值(value)<ul>
+<li>UIApplicationShortcutItemType   （必须的）： 要求独一无二的字符串标志对每个 item</li>
+<li>UIApplicationShortcutItemTitle（必须的）：显示在UI 上的 item的名字</li>
+<li>UIApplicationShortcutItemSubtitle(可选的)：显示在UI上的item 的副标题名字</li>
+<li>UIApplicationShortcutItemIconType(可选的)：系统系统的图标，所有可支持的 都可以在 here找到</li>
+<li>UIApplicationShortcutItemIconFile (可选的)：自定义的图片名称在assets目录下，如果提供了，UIApplicationShortcutItemIconType 将会被忽略，图标应该是 35 * 35 的单色图片(？此处有待考究？)，，所有可支持的 键(key)都可以在 here 找到。</li>
+</ul>
+</li>
+</ul>
+<h2 id="weakself理解"><a href="#weakself理解" class="headerlink" title="weakself理解"></a>weakself理解</h2><p><strong>@weakify</strong> 在block外使用，定义了一个局部变量叫self<em>weak</em>,<br><strong>@strongify</strong> 在block内执行，也定义了一个局部变量叫self, 会shadow掉外部的self， 引用self<em>weak</em>,离开block, self恢复为全局的self,没有shadow</p>
+<h2 id="Instrument"><a href="#Instrument" class="headerlink" title="Instrument"></a>Instrument</h2><ul>
+<li>进行内存检测时一定要关闭Zombiles 因为它不释放内存</li>
+<li>Persistent 正在使用的</li>
+<li>Transient 临时的（会被释放）</li>
+<li>Alloc 使用<br>  多次进入退出页面，观察内存是否有显著的增长即可知道是否有内存泄露<ul>
+<li>statistics<br>  搜索某一对象，观察它的persistent的变化，如进入一个页面后，再退出，它的persistent应该变为0</li>
+<li>generations<br>  进入前标记一下，进入后退出再标记下，多执行几次这样的操作，观差内存使用情况</li>
+</ul>
+</li>
+</ul>
+<h2 id="导入框架的头文件需要加入框架名称路径"><a href="#导入框架的头文件需要加入框架名称路径" class="headerlink" title="导入框架的头文件需要加入框架名称路径"></a>导入框架的头文件需要加入框架名称路径</h2><p>cocoapods 0.39.0以上版本会报错找不到头文件<br>如Fabric frameword, 可使用如下方式<br><code>#import &lt;Fabric/Fabric.h&gt;</code></p>
+<h2 id="Xcode搜索中文字符串"><a href="#Xcode搜索中文字符串" class="headerlink" title="Xcode搜索中文字符串"></a>Xcode搜索中文字符串</h2><p>打开”Find Navigator”<br>切换搜索模式到 “Find &gt; Regular Expression”<br>输入<code>@&quot;[^&quot;]*[\u4E00-\u9FA5]+[^&quot;\n]*?&quot;</code> (swift请去掉<code>@</code> 输入<code>&quot;[^&quot;]*[\u4E00-\u9FA5]+[^&quot;\n]*?</code> 就好了)</p>
+<h2 id="ios-button-animation"><a href="#ios-button-animation" class="headerlink" title="ios button animation"></a>ios button animation</h2><p>使用uibutton.imageView前必须先设置一个image通过setImage:forState方法，否则不会显示<br>设置uibutton.imageView其实是设置前景图像不是background</p>
+<h2 id="CocoaLumberjack-配合XcodeColors没有颜色"><a href="#CocoaLumberjack-配合XcodeColors没有颜色" class="headerlink" title="CocoaLumberjack 配合XcodeColors没有颜色"></a>CocoaLumberjack 配合XcodeColors没有颜色</h2><p>需要在scheme中添加环境变量<code>XcodeColors</code>, 值为<code>YES</code></p>
+<h2 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h2><ul>
+<li>xcode代码拖拽<br>先选中代码，鼠标指针移到该区域，等上一两秒再拖动<br><strong>&lt;# name #&gt;</strong>占位符</li>
+<li>xcode 设置默认左括号单独一行<br><code>defaults write com.apple.Xcode XCCodeSenseFormattingOptions -dict BlockSeparator &quot;\n&quot;</code></li>
+<li>xcode switch的case语句中不能直接定义变量，需要用大括号括起来</li>
+<li>Xcode plugin<ul>
+<li>可以用tab键补全版本，read命令显示插件禁用情况，delete命令删除配置文件，这样下次启动时会提示加载插件<br><code>$ defaults read com.apple.dt.Xcode DVTPlugInManagerNonApplePlugIns-Xcode-7.1.1</code></li>
+<li>信任插件<br><code>sudo xcodebuild -license</code></li>
+</ul>
+</li>
+<li>Option + 点击Product菜单出现其他的菜单</li>
+<li>设置键盘类型一定要在becomeFirstResponse之前调用，否则无效</li>
+<li>从一个键盘布局切换到另一个布局可能需要先resign再becomeFirstResponse</li>
+<li>app启动时AFNetworkReachabilityManager检查网络状态为AFNetworkReachabilityStatusUnknown，启动后正常</li>
+</ul>
+<h2 id="ios禁用https"><a href="#ios禁用https" class="headerlink" title="ios禁用https"></a>ios禁用https</h2><p>在Info.plist中添加NSAppTransportSecurity类型Dictionary。<br>在NSAppTransportSecurity下添加NSAllowsArbitraryLoads类型Boolean,值设为YES<br>(修改测试的info.plist无效)</p>
+<h2 id="exclusiveTouch属性"><a href="#exclusiveTouch属性" class="headerlink" title="exclusiveTouch属性"></a>exclusiveTouch属性</h2><p>注：同时按下俩个按钮，在响应的响应事件里屏蔽彼此也是会调用的<br>UIView 的exclusiveTouch属性<br>exclusiveTouch的意思是UIView会独占整个Touch事件，具体的来说，就是当设置了exclusiveTouch的 UIView是事件的第一响应者，那么到你的所有手指离开前，其他的视图UIview是不会响应任何触摸事件的，对于多点触摸事件，这个属性就非常重要，值得注意的是：手势识别（GestureRecognizers）会忽略此属性。<br>列举用途：我们知道ios是没有GridView视图的，通常做法是在UITableView的cell上加载几个子视图，来模拟实现 GridView视图，但对于每一个子视图来说，就需要使用exclusiveTouch，否则当同时点击多个子视图，那么会触发每个子视图的事件。当然 还有我们常说的模态对话框</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ul>
+<li>viewWillAppear and viewWillDisappear前后台切换时不会调用</li>
+<li>EXC_BREAKPOINT EXC_ARM_BREAKPOINT 僵尸断点调试即可，内存被释放了</li>
+<li>苹果在官方声明中表示，现有的 wwdr中间证书将在 2016年2月14 日到期,请重新下载安装证书可能失败，由于你安装了apple configurator,默认使用它打开</li>
+<li>Swift中String类型有些方法无法支持，只能转换为NSString来操作，幸好String与NSString转换十分简单 如·(str as NSString).rangeOfString(“(days)”)·</li>
+<li>uigestuereconigzer 一般情况下不需要设置代理，只需在addRecognizer里填入参数即可；但是一些其的委托函数像<br><code>- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch</code><br>必须设置代理才会被调用</li>
+<li><p>生成国际化文件,xargs是一条Unix和类Unix操作系统的常用命令。它的作用是将参数列表转换成小块分段传递给其他命令，以避免参数列表过长的问题<br><code>find . -name \*.m | xargs genstrings -o zh-Hans.lproj</code></p>
+</li>
+<li><p>截屏</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIImage</span>*)captureScreen</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">UIGraphicsBeginImageContext</span>(<span class="keyword">self</span><span class="variable">.view</span><span class="variable">.frame</span><span class="variable">.size</span>);</span><br><span class="line">    <span class="built_in">CGContextRef</span> context = <span class="built_in">UIGraphicsGetCurrentContext</span>();</span><br><span class="line">    [<span class="keyword">self</span><span class="variable">.view</span><span class="variable">.layer</span> renderInContext:context];</span><br><span class="line">    <span class="built_in">UIImage</span> *image = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">    <span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line">    <span class="keyword">return</span> image;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用lipo 编译合并iPhone模拟器和真机通用的静态类库<br><code>lipo -create Debug-iphonesimulator/libmylib.a Debug-iphoneos/libmylib.a -output libmylib.o</code></p>
+</li>
+<li><p>UITableViewCell 的checkmark 需要手动用数组管理，否则滚动时会随机;不能触发accessoryButtonTappedForRowWithIndexPath事件，只有disclose类型的accessor才可</p>
+</li>
+<li><p>change xcode default version<br>xcode-select -print-path<br>sudo xcode-select -switch /Applications/Xcode.app<br>Xcode-&gt;Preference-&gt;Location-&gt;Command line tools -&gt; [select version]</p>
+</li>
+<li><p>uitableview delete cell<br>  数据源册除一定要放在前面，否则异常</p>
+</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">self</span><span class="variable">.config</span> removeObjectAtIndex:indexPath<span class="variable">.row</span>];</span><br><span class="line">[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:<span class="built_in">UITableViewRowAnimationFade</span>];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>自定义手势会屏蔽button事件，在<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)gestureRecognizer:(<span class="built_in">UIGestureRecognizer</span> *)gestureRecognizer shouldReceiveTouch:(<span class="built_in">UITouch</span> *)touch</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这个函数里做相应处理即可</p>
+<ul>
+<li>CocoaPods更新慢的问题<br>最近可能由于出国节点的问题，无论是执行pod install还是pod update都卡在Analyzing dependencies不动了，慢到无以复加的地步，无法忍受。<br>其实原因在于以上两个命令执行时会升级CocoaPods的spec仓库，加一个参数可以省略这一步，然后速度就会提升不少。加参数的命令如下 [遗失，待补充]</li>
+<li>uiscrollview上添加button可能没有highlight效果，设置scrollview的delaysContentTouches属性为no即可</li>
+<li>设置圆角不会离屏渲染，同时设置<code>maskToBounds=YES</code>时才会</li>
+<li>缩放模式<ul>
+<li>scale mode</li>
+<li>scale aspect fill 填满整个空间，等比缩放，可能扩展到区域外</li>
+<li>scale to fill 非等比填满</li>
+<li>scale aspect fit 尽可能等比填满，不可能超出区域</li>
+</ul>
+</li>
+<li>IB中拖动view的层次，把一个view拖动到另一个view上，若拖动点在下面的view边界里，会自动变成下面view的子view，否则是兄弟； 如果确实想把一个小的view拖到一个大view上面，可反过来操作，然后通过菜单editor－&gt;arrange把大view放到后面, 也可通过这种方法，使用键盘的方向键进行移动.</li>
+<li><p>set tableview seperator picture</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIImage</span> *img = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"list_single_null_line.png"</span>];</span><br><span class="line"><span class="keyword">self</span><span class="variable">.tableView</span><span class="variable">.separatorColor</span> = [<span class="built_in">UIColor</span> colorWithPatternImage:img];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>xcode<br>把资源以目录的形式加入xcode中, 同时, 在加入时, 选择”Create Folder References for any  added folders”, 而不是默认的”Recursively create groups for any added folders”, 加入后,xcode左侧树状结构内显示的图标是蓝色而非黄色. 这样只能以路径形式方问</p>
+</li>
+<li>bundle<br>  xcode 中不能直接创建bundle， 但是你可以把文件夹名的后辍改为”.bundle”, 然后再导入到xcode中就变成bundle了</li>
+<li>引用文件<br>  xcode中的文件夹两种颜色根据导入的方式不同，把文件夹拖到xcode中会提示一个对话框，选第一个颜色为黄色，不保存目录结构，都放到bundle的根目录中，观察模拟器中的程序所在的目录的结构可知；选第二项颜色为蓝色，保持目录结构</li>
+<li><p>图片资源国际化<br>  把相关的图片拖到相应的语言目录中，然后再把语言目录拖到xcode中， 注意颜色均为蓝色，不能使用imageNamed加载图片，只能使用<br>  NSString <em>path =[[NSBundle mainBundle] pathForResource:@”fname” ]<br>  UIImage </em>img = [UIImage imageWithContentOfFile:path];</p>
+</li>
+<li><p>有可能是模拟器器题，换成真机测试，没有编译模拟器版本的库<br>error: No architectures to compile for (ONLY_ACTIVE_ARCH=YES, active arch=x86_64, VALID_ARCHS=i386).</p>
+</li>
+<li><p>最近可能由于出国节点的问题，无论是执行pod install还是</p>
+</li>
+<li><p>update都卡在Analyzing dependencies不动了，慢到无以复加的地步，无法忍受。<br>pod install –verbose –no-repo-update<br>pod update –verbose –no-repo-update</p>
+</li>
+<li><p>ipa generate<br>  找到archieve的位置， 右键显示包内容，在其子目录下Product/Applications会发现应用程序，把这个文件拖到itues的应用程序中就会生成一个ipa文件</p>
+</li>
+<li><p>join<br>数据表的连接有: </p>
+<ul>
+<li>内连接(自然连接): 只有两个表相匹配的行才能在结果集中出现 </li>
+<li>外连接: 包括 <ul>
+<li>左外连接(左边的表不加限制) </li>
+<li>右外连接(右边的表不加限制) </li>
+<li>全外连接(左右两表都不加限制) </li>
+</ul>
+</li>
+<li>自连接(连接发生在一张基表内)</li>
+</ul>
+</li>
+<li><p>ios 国际化<br>  <code>ibtool –generate-strings-file ~/.../XXXViewController.strings XXXViewController.xib</code><br>  xcode 6 中引入了标准的国际化文件 XLIFF, 只是作为中间文件用最终还是用strings文件，可以调试预览国际化<br>  本地化图片： 单张图片不解释和strings文件一样，<br>  如果想本地化很多图片，放到一个文件夹里，再放入相应的语言目录里，最后以引用的形式导入到xcode中，接下来的操作都一样了。注意无法像单个文件哪样直接本地化，以后的xcode可能就可以了。 切记不要再把语言文件夹导入到项目中，调试的时后可能都没问题，打包的时候就会发现问题了，你会发再无论怎么弄只有一个主localization文件，不要把一个文件引用多次导入到项目中，或copy bundle resource，都会出现莫名其秒的问题</p>
+</li>
+<li><p>Autolayout</p>
+<ul>
+<li>|  代表parent view, 不要随便加，<ul>
+<li>H, V 代表方向，大写的，不能小写</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>UICollectionViewController代码创建时一定要指定layout, 此外UICollectionViewFlowlayout的代理和collectionview的代理是一个，不能单独设置，使用这种布局一般要实现UICollectionViewDelegateFlowLayout协议</p>
+</li>
+<li><p>transfrom<br>变换后bounds不变center不变，frame改变，链式变换实际交果与顺序添加相反， 下面的变换先旋转后偏移</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v2.transform = <span class="type">CGAffineTransformMakeTranslation</span>(<span class="number">40</span>, <span class="number">0</span>)</span><br><span class="line">v2.transform = <span class="type">CGAffineTransformRotate</span>(v2.transform, π / <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> t = <span class="type">CGAffineTransformMakeTranslation</span>(<span class="number">40</span>, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> r = <span class="type">CGAffineTransformMakeRotation</span>(π / <span class="number">8</span>)</span><br><span class="line"><span class="comment">// 这个函数先执行t变换然后r变换</span></span><br><span class="line">v2.transform = <span class="type">CGAffineTransformConcat</span>(t, r)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 先r然后t,然后r'</span></span><br><span class="line">v2.transform = <span class="type">CGAffineTransformConcat</span>(v2.transform, r)</span><br><span class="line">v2.transform = <span class="type">CGAffineTransformConcat</span>(v2.transform, t)</span><br><span class="line"><span class="comment">// v2.transform = CGAffineTransformConcat(CGAffineTransformInvert(r), v2.transform)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 先t然后r,然后t</span></span><br><span class="line">v2.transform = <span class="type">CGAffineTransformConcat</span>(v2.transform, r)</span><br><span class="line">v2.transform = <span class="type">CGAffineTransformConcat</span>(v2.transform, t)</span><br><span class="line"><span class="comment">// v2.transform = CGAffineTransformConcat(v2.transform, t)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>rotate matrix</p>
+<p>rotate matrix, tx = ty = 0 </p>
+<p>|col1|col2|col3|<br>|:—-:|:——:|:—–:|<br>|cosa|  sina| 0 |<br>|-sina| cosa| 0 |<br>|tx    |ty  | 0 | </p>
+<p><code>x&#39; = x * cosa - y * sina</code><br><code>y&#39; = x * sina + y * cosa</code></p>
+</li>
+<li><p>setNeedDisplay 下一周期执行，而needLayoutIfNeed立即执行</p>
+</li>
+<li>animation<br>CAKeyFrameAnimation 需要设置additive为yes，否则默认从0开始,不能重用.<br>Core Animation维护了两套layer层级：数据模型layer层树和表现layer层树。前者存放层的状态而后者展示动画值。实际上有三层render tree, 不过是私有的.默认情况下animation不会直接修改表现层，并在动画结束的时候被移除掉。一旦动画被移除了，表现层将会回到初始的状态.解决方案有两个：<br>第一种方式是直接更新数据层的属性（推荐），因为这么做使动画完全可选。一旦动画结束并且从layer层移除，那么表现层将会与数据层契合，正好符合动画的最后一帧。<br>或者你可以通过给动画的fillMode赋值为kCAFillModeForwards同时将removedOnCompletion设置为NO来让动画保持最后一帧的状态。</li>
+<li>自动布局的优先级，数值越大优先，最大是1000, 正好与linux进程的优先级相反</li>
+<li>按住Cmd和Shift，然后在需要选择的view上方按右键，就可以列出在点击位置上所有的view的列表。藉此就可以方便快速地选中想要的view了。<br>Shift+Cmd+_或者Shift+Cmd+|即可在选中的view上添加一条水平或者垂直中心的辅助线 </li>
+<li>anchorpoint position 两者互不影响，anchor上移frame下移， 修改anchor同时会修改frame,但不修改anchor, position与center都是anchor在父视图的位置</li>
+<li>Binary operator ‘|’ cannot be applied to two UIViewAutoresizing operands<br>view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]</li>
+<li>swift aop函数不被调用，参数需要转换成oc对象如NSNumber,新设备不受影响，老设备如iphone5</li>
+<li>真机调试出现如下错误： Could not find Developer Disk Imagez。<br>xcode版本低于手机系统版本，请升级xcode版本</li>
+<li><p>判断编译环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$CONFIGURATION</span>"</span> != <span class="string">"Debug"</span>]; <span class="keyword">then</span></span><br><span class="line">    ./hjclass/External/Crashlytics/Fabric.framework/run be45a1795aa3bae713b7c67631da76b7e7b68738 b741f4f0956d8dd52a166baef3f72119bb87ddf8779be1e8fdc077321ac19d80</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>改变应用的某些设置选项时，如相机权限，应用会自动重启 </p>
+</li>
+<li><p>Error: CUICatalog: Invalid asset name supplied: (null), or invalid scale factor : 2.000000<br>This one appears when someone is trying to put nil eventually in [UIImage imageNamed:]<br>Add symbolic breakpoint for [UIImage imageNamed:]<br>Add $arg3 == nil condition (on Simulator) or $r0 == nil condition on iPhone device<br>Run your application and see where is the problem persist<br>It defined in usr/include/AvailabilityMacros.h:</p>
+</li>
+<li><p>废弃api</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#define DEPRECATED_ATTRIBUTE        __attribute__((deprecated))</span></span><br><span class="line"><span class="preprocessor">#define DEPRECATED_MSG_ATTRIBUTE(msg) __attribute((deprecated((msg))))</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>FBSOpenApplicationErrorDomain Code=3<br>升级xcode模拟器运行会出现如此问题，重启模拟器或<br>iOS Simulator -&gt; Reset Contents and Settings… -&gt; Reset均可</p>
+</li>
+<li>ios9 &amp; iphon6s上同一时间通知可能响应两次</li>
+<li>本地通知可以模拟器调试，universal link不可以</li>
+<li>ios8 以前设备旋转[UIScreen mainScreen].bounds不改变， 而ios8之后会改变，且自定义window不会旋转或改变大小，<a href="http://stackoverflow.com/questions/26706050/custom-uiwindows-do-not-rotate-correctly-in-ios-8" target="_blank" rel="external">参考</a></li>
+<li><p>ios项目启用http请求<br>在Info.plist中添加NSAppTransportSecurity类型Dictionary。<br>在NSAppTransportSecurity下添加NSAllowsArbitraryLoads类型Boolean,值设为YES</p>
+</li>
+<li><p>Carthage包管理</p>
+<ol>
+<li>brew install carthage</li>
+<li>touch Cartfile</li>
+<li>edit Cartfile</li>
+<li>carthage update</li>
+<li>draw framework to your project</li>
+</ol>
+</li>
+<li>二维码扫面区域<br>需要指定分辨率， aspectfill模式会填充整个view,有可能多出一部分，这时就会进行补偿</li>
+<li>从CIImage转换成UIImage后,获取data,保存都会失败，因为CIImage是惰性加载</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> savedImage = <span class="keyword">self</span>.previewImageView.image!.<span class="type">CIImage</span></span><br><span class="line">convertToUIImageFormCIImage(savedImage) <span class="comment">// ok</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">convertToUIImageFormCIImage</span><span class="params">(src:CIImage)</span></span> -&gt; <span class="type">UIImage</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> context = <span class="type">CIContext</span>()</span><br><span class="line">    <span class="keyword">let</span> ref = context.createCGImage(src, fromRect: src.extent)</span><br><span class="line">    <span class="keyword">return</span> <span class="type">UIImage</span>(<span class="type">CGImage</span>: ref)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>NEHotspotHelper 只有真机可用</p>
+<ol>
+<li>申请权限</li>
+<li>重新生成profile,并导入到项目中</li>
+<li>在项目配置-&gt;Capabilities里开启Wireless Accessory Configuration和Background Modes, 此时如果没有entitlements文件会自动生成一个，打开该文件，添加一个条目<br>·com.apple.developer.networking.HotspotHelper·，类型为bool,值为true,</li>
+<li>打开Info.plist文件在Required background modes下加入一个子条目：network-authentication，<br>到此配置完成</li>
+<li>注意有些函数只在系统的wifi列表页才有效</li>
+</ol>
+</li>
+<li><p>CADisplayLink<br>只读的CFTimeInterval值，表示屏幕显示的上一帧的时间戳，这个属性通常被target用来计算下一帧中应该显示的内容。<br>打印timestamp值，其样式类似于：<br>179699.631584<br>虽然名为时间戳，但这和常见的unix时间戳差异很大，事实上这是CoreAnimation使用的时间格式。每个CALayer都有一个本地时间</p>
+</li>
+<li><p><code>do {} while (0)</code> 的好处， 如果一个宏在if的后边执行，而这个宏有多个语句，不加while有可能只执行一句，<a href="http://www.cnblogs.com/bastard/archive/2011/11/24/2262195.html" target="_blank" rel="external">参见</a></p>
+</li>
+<li><p>carthage package 设置<br><code>run script: /usr/local/bin/carthage copy-frameworks</code><br>Input file: eg. <code>$(SRCROOT)/Carthage/Build/iOS/Box.framework</code></p>
+</li>
+<li><p>scheme</p>
+<ol>
+<li>自定义scheme info.plist/URL types</li>
+<li>白名单 info.plist/LSApplicationQueriesSchemes</li>
+<li>打开外部应用时有时需要验证给scheme添加一些奇怪的字符串</li>
+</ol>
+</li>
+<li><p>swift NS_OPTIONS<br>swift中没有这个类型，不过可以用OptionSetType替代,没有前者好用</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">struct</span> <span class="title">ReserveTimeStatus</span> : <span class="title">OptionSetType</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">let</span> rawValue: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">init</span>(rawValue: <span class="type">Int</span>) &#123; <span class="keyword">self</span>.rawValue = rawValue&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> <span class="type">Inter15m</span> = <span class="type">ReserveTimeStatus</span>(rawValue: <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> <span class="type">Live15m</span> = <span class="type">ReserveTimeStatus</span>(rawValue: <span class="number">2</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>oc中不能导入的swift类型</p>
+<ul>
+<li>Generics</li>
+<li>Tuples</li>
+<li>Enumerations defined in Swift without Int raw value type</li>
+<li>Structures defined in Swift</li>
+<li>Top-level functions defined in Swift</li>
+<li>Global variables defined in Swift</li>
+<li>Typealiases defined in Swift</li>
+<li>Swift-style variadics</li>
+<li>Nested types</li>
+<li>Curried functions </li>
+</ul>
+</li>
+<li><p>git本地忽略且不被覆盖<br>If you don’t want to create a .gitignore file to share with others, you can create rules that are not committed with the repository. You can use this technique for locally-generated files that you don’t expect other users to generate, such as files created by your editor.</p>
+<p>Use your favorite text editor to open the file called .git/info/exclude within the root of your Git repository. Any rule you add here will not be checked in, and will only ignore files for your local repository.</p>
+<p>In Terminal, navigate to the location of your Git repository.<br>Using your favorite text editor, open the file .git/info/exclude.</p>
+</li>
+<li><p>gitignore<br>gitignore文件中父目录被忽略，则子目录被重新加入无效， 需要一层一层的添加;重新加入<code>!</code>只对最近的规则有效，可以有多条， 例如下面的例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Carthage/*   # `*`&#26159;&#24517;&#35201;&#30340;&#65292;&#19981;&#21253;&#25324;&#24403;&#21069;&#25991;&#20214;&#22841;&#20294;&#21253;&#25324;&#23376;&#20869;&#23481;&#10;!Carthage/Build&#10;&#10;Carthage/Build/iOS/*&#10;!Carthage/Build/iOS/SwiftTweak.framework</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>lldb  </p>
+<ul>
+<li><code>thread return</code> <value> </value></li>
+<li><code>bt</code> 函数调用回硕</li>
+<li><code>frame variable</code> 打印变量</li>
+<li><code>thread jump --by 2</code> 跳过两行，可用于跳过if</li>
+<li><code>thread jump --line 102</code> 跳到102行</li>
+<li><code>expression (void)[CATransaction flush]</code> 立即刷新UI</li>
+<li><code>po [[[UIApplication sharedApplication] keyWindow] recursiveDescription]</code></li>
+<li><code>p/x &lt;var&gt;</code> 以16进制打印</li>
+<li><code>p/t &lt;var&gt;</code> 以2进制打印 </li>
+<li><code>po [$myButton allTargets]</code> 打印按钮关联的target</li>
+<li><code>image lookup --address &lt;address&gt;</code> 查看符号信息</li>
+<li><code>target stop-hook add -o &quot;p self.view&quot;</code> 断点时自动执行</li>
+<li><code>display self.view</code> 同上</li>
+<li><code>po [[UIWindow keyWindow] _autolayoutTrace]</code> 查看有问题的自动布局</li>
+<li>lldb定义变量只能以<code>$</code>开头</li>
+<li>lldb扩展命令集 Chisel</li>
+<li><a href="https://developer.apple.com/library/mac/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-command-examples.html#//apple_ref/doc/uid/TP40012917-CH3-SW5" target="_blank" rel="external">lldb文档</a></li>
+</ul>
+</li>
+<li><p>print indexPath.row<br>  <code>p indexPath.row     # error</code><br>  <code>p [indexPath row]   # error</code><br>  <code>p (NSInteger)[indexPath row] # ok</code><br>  <code>expr (void)NSLog(@&quot;%ld&quot;, (NSInteger)[indexPath row]) # ok</code><br>  总结， 有些时候不能使用.操作符，需要转成函数调用， 也可通过先执行这个命令一次<code>e @import UIKit</code></p>
+</li>
+<li><p>New document that describes how to use the OBJC_PRINT_REPLACED_METHODS environment variable to find category method name clashes.</p>
+</li>
+<li><p>plistbudy 修改plist文件</p>
+<p>  <code>plistbuddy -c &#39;Print:CFBundleVersion&#39; &lt;fname&gt;</code><br>  <code>plistbuddy -c &#39;Set:CFBundleVersion 112&#39; &lt;fname&gt;</code></p>
+</li>
+<li><p><strong>gem uninstall cocoapods</strong> 卸载cocoapods</p>
+</li>
+<li><a href="http://www.jianshu.com/p/6c0758984805" target="_blank" rel="external">ios离线文档下载说明</a></li>
+<li><code>codesign --verify</code> 验证签名</li>
+<li><p>苹果在官方声明中表示，现有的 wwdr 中间证书将在 2016 年 2 月 14 日到期,请重新下载<br>安装证书可能失败，由于你安装了apple configurator,默认使用它打开</p>
+</li>
+<li><p>ios模拟器与PC共用剪切板，有时复制不了，解决方案，现在PC复制，然后切到模拟器，先按下Cmd + V, 然后快速单击可编辑区域，这时选择粘贴即可</p>
+</li>
+<li><p>IBDesignable</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">@IBDesignable</span> <span class="class"><span class="keyword">class</span> <span class="title">CircleView</span>: <span class="title">UIView</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> shapleLayer = <span class="type">CAShapeLayer</span>()</span><br><span class="line">    </span><br><span class="line">    <span class="preprocessor">@IBInspectable</span> <span class="keyword">var</span> start: <span class="type">CGFloat</span> = <span class="number">0.0</span> &#123;</span><br><span class="line">        <span class="keyword">didSet</span> &#123;</span><br><span class="line">            shapleLayer.strokeStart = start</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="preprocessor">@IBInspectable</span> <span class="keyword">var</span> end: <span class="type">CGFloat</span> = <span class="number">1.0</span> &#123;</span><br><span class="line">        <span class="keyword">didSet</span> &#123;</span><br><span class="line">            shapleLayer.strokeEnd = end</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">init</span>(frame: <span class="type">CGRect</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</span><br><span class="line"><span class="comment">//        setup()</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">prepareForInterfaceBuilder</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.prepareForInterfaceBuilder()</span><br><span class="line">        setup()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">required</span> <span class="keyword">init</span>?(coder aDecoder: <span class="type">NSCoder</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(coder: aDecoder)</span><br><span class="line">        setup()</span><br><span class="line"><span class="comment">//        fatalError("init(coder:) has not been implemented")</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="func"><span class="keyword">func</span> <span class="title">setup</span><span class="params">()</span></span> &#123;</span><br><span class="line">        layer.bounds = <span class="keyword">self</span>.bounds</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> path = <span class="type">UIBezierPath</span>(arcCenter: <span class="type">CGPointMake</span>(frame.width / <span class="number">2</span>, frame.height / <span class="number">2</span>), radius: frame.size.width / <span class="number">4</span>, startAngle: <span class="number">0</span>, endAngle: <span class="type">CGFloat</span>(<span class="type">M_PI</span>) * <span class="number">2</span>, clockwise: <span class="literal">true</span>)</span><br><span class="line">        </span><br><span class="line">        shapleLayer.path = path.<span class="type">CGPath</span></span><br><span class="line">        shapleLayer.strokeStart = start</span><br><span class="line">        shapleLayer.lineWidth = <span class="number">5</span></span><br><span class="line">        shapleLayer.fillColor = <span class="type">UIColor</span>.whiteColor().<span class="type">CGColor</span></span><br><span class="line">        shapleLayer.strokeEnd = end</span><br><span class="line">        shapleLayer.lineCap = <span class="string">"round"</span></span><br><span class="line">        shapleLayer.backgroundColor = <span class="type">UIColor</span>.whiteColor().<span class="type">CGColor</span></span><br><span class="line">        </span><br><span class="line">        shapleLayer.strokeColor = <span class="type">UIColor</span>.redColor().<span class="type">CGColor</span></span><br><span class="line">        layer.addSublayer(shapleLayer)</span><br><span class="line">        <span class="keyword">self</span>.backgroundColor = <span class="type">UIColor</span>.whiteColor()</span><br><span class="line">        <span class="built_in">print</span>(<span class="keyword">self</span>.bounds)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>NSAttributeStirng key</p>
+</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSFontAttributeName</span>;                  <span class="comment">//字体，value是UIFont对象</span></span><br><span class="line"><span class="built_in">NSParagraphStyleAttributeName</span>;        <span class="comment">//绘图的风格（居中，换行模式，间距等诸多风格），value是NSParagraphStyle对象</span></span><br><span class="line"><span class="built_in">NSForegroundColorAttributeName</span>;       <span class="comment">// 文字颜色，value是UIFont对象</span></span><br><span class="line"><span class="built_in">NSBackgroundColorAttributeName</span>;       <span class="comment">// 背景色，value是UIFont</span></span><br><span class="line"><span class="built_in">NSLigatureAttributeName</span>;              <span class="comment">//  字符连体，value是NSNumber</span></span><br><span class="line"><span class="built_in">NSKernAttributeName</span>;                  <span class="comment">// 字符间隔, 默认为5</span></span><br><span class="line"><span class="built_in">NSStrikethroughStyleAttributeName</span>;    <span class="comment">//删除线，value是NSNumber</span></span><br><span class="line"><span class="built_in">NSUnderlineStyleAttributeName</span>;        <span class="comment">//下划线，value是NSNumber</span></span><br><span class="line"><span class="built_in">NSStrokeColorAttributeName</span>;           <span class="comment">//描绘边颜色，value是UIColor</span></span><br><span class="line"><span class="built_in">NSStrokeWidthAttributeName</span>;           <span class="comment">//描边宽度，value是NSNumber</span></span><br><span class="line"><span class="built_in">NSShadowAttributeName</span>;                <span class="comment">//阴影，value是NSShadow对象</span></span><br><span class="line"><span class="built_in">NSTextEffectAttributeName</span>;            <span class="comment">//文字效果，value是NSString</span></span><br><span class="line"><span class="built_in">NSAttachmentAttributeName</span>;            <span class="comment">//附属，value是NSTextAttachment 对象</span></span><br><span class="line"><span class="built_in">NSLinkAttributeName</span>;                  <span class="comment">//链接，value是NSURL or NSString</span></span><br><span class="line"><span class="built_in">NSBaselineOffsetAttributeName</span>;        <span class="comment">//基础偏移量，value是NSNumber对象</span></span><br><span class="line"><span class="built_in">NSUnderlineColorAttributeName</span>;        <span class="comment">//下划线颜色，value是UIColor对象</span></span><br><span class="line"><span class="built_in">NSStrikethroughColorAttributeName</span>;    <span class="comment">//删除线颜色，value是UIColor</span></span><br><span class="line"><span class="built_in">NSObliquenessAttributeName</span>;           <span class="comment">//字体倾斜</span></span><br><span class="line"><span class="built_in">NSExpansionAttributeName</span>;             <span class="comment">//字体扁平化</span></span><br><span class="line"><span class="built_in">NSVerticalGlyphFormAttributeName</span>;     <span class="comment">//垂直或者水平，value是 NSNumber，0表示水平，1垂直, 只在mac有</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>@IBInspectable 导入图片必须指定bundle而且不是mainBundle</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> bundle = <span class="type">NSBundle</span>(forClass: <span class="keyword">self</span>.<span class="keyword">dynamicType</span>)</span><br><span class="line"><span class="keyword">let</span> img = <span class="type">UIImage</span>(named: <span class="string">"question_player"</span>, inBundle: bundle, compatibleWithTraitCollection: <span class="literal">nil</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>@IBInspectable可以调试, Editor-&gt;Debug selected view</li>
+<li>UITapGesture没有.begin 和.cancel状态，只有.end状态</li>
+<li><p>使用自动布局的view, 通过改变frame做动画可能失败，此时需要使用自动布局的动画</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UIView</span>.animateWithDuration(<span class="number">1.0</span>, animations: &#123;</span><br><span class="line">   <span class="keyword">self</span>.heightConstraint.constant = <span class="number">200</span></span><br><span class="line">   <span class="keyword">self</span>.layoutIfNeeded() <span class="comment">// 一定需要否则没动画</span></span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用storyboard指定entry point的项目中接入tweak libaray</p>
+</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> storyboard = <span class="type">UIStoryboard</span>(name: <span class="string">"Main"</span>, bundle: <span class="literal">nil</span>)</span><br><span class="line"><span class="keyword">let</span> vc = storyboard.instantiateInitialViewController()</span><br><span class="line">window = <span class="type">TweakWindow</span>(frame: <span class="type">UIScreen</span>.mainScreen().bounds, tweakStore: <span class="type">MyTweaks</span>.defaultStore)</span><br><span class="line">window!.rootViewController = vc</span><br><span class="line">window!.makeKeyAndVisible()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>scrollview会拦截touchbegin事件，不会继续传递</li>
+<li><p>The file couldn’t be opened because the specified URL type isn’t supported.<br>本地文件请用NSURL(fileURLWithPath: dstPath)指定URL</p>
+</li>
+<li><p>uitextfield 偏移<br><code>textField.layer.sublayerTransform = CATransform3DMakeTranslation(x, y, z)</code></p>
+</li>
+<li><p>Masnory 自适应图片有时图片上下两侧显示多余空白，可通过拉取到图片时增加宽高比约束设，若刷新时消失，或显示不正常，可先删除该限制，再重新加入该限制，不能直接使用masnory的update方法，因为有可能两个限制同时存在，这可能是masnory的一个bug,相关代码如下：</p>
+</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> invalidateIntrinsicContentSize()</span><br><span class="line"></span><br><span class="line"><span class="keyword">self</span>.heightConstraint?.uninstall()</span><br><span class="line"></span><br><span class="line"><span class="keyword">self</span>.mas_updateConstraints(&#123; (make) <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">let</span> ratio = <span class="keyword">self</span>.image!.size.height / <span class="keyword">self</span>.image!.size.width</span><br><span class="line">    <span class="keyword">self</span>.heightConstraint =  make.height.mas_equalTo()(<span class="keyword">self</span>.mas_width).multipliedBy()(ratio)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">super</span>.updateConstraints()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>关闭xcode8 系统Log<br><img src="http://odakbgmli.bkt.clouddn.com/blog/10%3A36%3A21.jpg" alt=""></p>
+</li>
+<li><p>ios10 uicollectionview 的预加载技术，这里说的预加载是指数据的预加载而不是视图，如果重用cell时都是重新创建子视图则不使用，而且会卡顿，使用预加载技术会滑动一段距离后才会调用cellForRow的方法</p>
+</li>
+<li>osx 的NSCollectionView使用storyboard会出现一些小问题，不显示数据，建议使用xib</li>
+<li>osx statusbar menu 创建后必须强引用否则不显示</li>
+<li><p>去警告， 找到警告类型如<code>-Wshorten-64-to-32</code>,则在编译选项中加入<code>-Wno-shorten-64-to-32</code>flag</p>
+</li>
+<li><p>xcode8.1编译项目可能会签名失败， <strong>Signing Identity: “-“  </strong>, <a href="https://forums.developer.apple.com/thread/66538" target="_blank" rel="external">详见</a></p>
+</li>
+<li><p><a href="https://forums.developer.apple.com/thread/17921" target="_blank" rel="external">编译警告</a></p>
+</li>
+<li><p>setting scheme， 在ios10中不在生效，只能打开设置：UIApplicationOpenSettingsURLString</p>
+</li>
+<li><p>push token格式<br><strong>a8e2eeeb c61189b7 353ee886 7ba61be3 0ad48110 8d71b593 8d442b5a 7455dd9c</strong></p>
+</li>
+<li><p>qr码最多包含984个纯汉字，一个汉字占3个字节，一个字符占1个字节。不同校验级别的二维码能包含不同容量的数据</p>
+<ul>
+<li>L : 2953</li>
+<li>M : 2331</li>
+<li>Q : 1663</li>
+<li>H : 1273 </li>
+</ul>
+</li>
+<li>snapshotViewAfterScreenUpdates 在模拟器显示不正常，显示一片白    </li>
+<li><p>[NSConcreteValue length] unrecognized method<br>原因可能是野指针，例如一个成员变量是NSString类型，但是用assign修饰</p>
+</li>
+<li><p>视频切换时可能闪烁一下， 给cvplayer的contents属性设置一个值，上一个视频的最后一帧</p>
+</li>
+<li><p>在iphone7+等设备上显示视频可能边界会显示灰线，这是系统问题</p>
+<ul>
+<li>方案1<br>如果设置shouldRasterize属性会模糊</li>
+<li>方案2<br>调整cvplayer的位置和大小，位置可能和4的倍数有关</li>
+</ul>
+</li>
+<li><p>iOS 播放视频</p>
+<ul>
+<li>相关类<ul>
+<li>AVPlayer</li>
+<li>AVPlayerLayer：  AVPlayer的容器</li>
+<li>AVPlayerViewController </li>
+</ul>
+</li>
+<li><p>更换视频</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">AVPlayerItem</span> *item = [[<span class="built_in">AVPlayerItem</span> alloc] initWithURL:[<span class="built_in">NSURL</span> fileURLWithPath:path]];</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.player</span> replaceCurrentItemWithPlayerItem:item];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>播放视频</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">AVPlayer</span> *player = [[<span class="built_in">AVPlayer</span> alloc] initWithURL:[<span class="built_in">NSURL</span> fileURLWithPath:path]];</span><br><span class="line">[player play];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>loop<br>监听<em>AVPlayerItemDidPlayToEndTimeNotification</em>通知</p>
+</li>
+<li>后台播放，前后台切换</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://purkylin.github.io/2017/02/22/iOS笔记/" data-id="cizggzwh20004g93oo3wce0z7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/22/JSPatch笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JSPatch笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/22/macos逆向笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">macos逆向笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/22/vi笔记/">vi笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/22/JSPatch笔记/">JSPatch笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/22/iOS笔记/">iOS笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/22/macos逆向笔记/">macos逆向笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/22/CMDevice​Motion学习笔记/">CMDevice​Motion学习笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Purkylin<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
